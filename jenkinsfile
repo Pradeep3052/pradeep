@@ -17,7 +17,7 @@ pipeline {
             steps {
                 dir("/var/lib/jenkins/workspace/new2") {
                 sh "mvn clean install -DskipTests"
-                mvn -f path/to/pom.xml <goals> ...
+                mvn -f path/to/pom.xml
                 }
             }
         }
