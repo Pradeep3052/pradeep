@@ -19,5 +19,7 @@ pipeline {
 		    "mvn clean install -DskipTests=true"
 		    }
 		}
+	     }	
 	  }
+}
   
