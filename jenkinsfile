@@ -16,10 +16,17 @@ pipeline {
 	  stage ('Build') {	
 		steps {
 		    dir("/var/lib/jenkins/workspace/new") {
-		    "mvn clean install -DskipTests=true"
+		    sh 'mvn -B -DskipTests clean package"
 		    }
 		}
-	     }	
 	  }
+    }
+   post {
+      always {
+         junit ( 
+	 allowEmptyResults: true,
+	 testResults: '*/test-reports/.xml'
+	)
+	}
+   }
 }
-  
